@@ -1,0 +1,35 @@
+# 3D Autonomy
+The Operating System for Autonomous Organizations.
+
+## Core Concept
+3D Autonomy provides a "Business AI OS" that moves organizations from automation to autonomy. It unifies AI agents, automation, ERP (specifically integrating with ERPNext), HRMS, CRM, and analytics into a single intelligence layer.
+
+## Target Audience
+- Small and Medium-sized Businesses (SMBs/MSMEs).
+- Roles: Business owners, Founders, Operations/HR/Sales/Finance managers, and Tech decision makers.
+
+## Supported Industries
+- Manufacturing
+- Hospitality & Hotels
+- Retail
+- Construction
+- Healthcare
+- Education
+- Professional Services
+
+## Key Offerings
+- **Business AI OS**: A core intelligence layer that reads, reasons, and acts across all business functions.
+- **Digital Workforce**: Specialized AI Agents (e.g., HR Agent, Finance Agent, Operations Agent) that own functions and execute autonomously.
+- **Integration Capabilities**: Deep integration with ERPNext and other existing business software.
+- **Specific Automations**: WhatsApp workflows, HR and payroll automation, lead follow-up, and attendance tracking.
+
+## The Autonomy Maturity Model
+1. **Manual Operations**: Reactive, spreadsheet-based.
+2. **Digital Operations**: Digitized but siloed data.
+3. **Automated Operations**: Rule-based bots, high maintenance.
+4. **AI-Assisted Operations**: Insight-driven, predictive recommendations.
+5. **Autonomous Organizations**: Self-operating AI agents working within human-set guardrails.
+
+## Contact Information
+- Email: 3dautonomy@gmail.com
+- Goal: Transform business from automation to autonomy.

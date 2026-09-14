@@ -393,6 +393,24 @@ footer{border-top:1px solid var(--line); padding:70px 0 0;}
 @media (max-width:900px){.resources-grid{grid-template-columns:1fr 1fr;}}
 @media (max-width:560px){.resources-grid{grid-template-columns:1fr;}}
 
+/* ---------- FAQ ---------- */
+.faq-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+.faq-item{background:var(--bg-panel); border-bottom:1px solid var(--line-soft);}
+.faq-question{
+  width:100%; text-align:left; padding:24px; font-family:var(--font-display); font-size:16px; 
+  font-weight:500; color:var(--text); display:flex; justify-content:space-between; align-items:center;
+  transition:background .25s;
+}
+.faq-question::after{content:'+'; font-family:var(--font-mono); font-size:18px; color:var(--accent); transition:transform .3s var(--ease);}
+.faq-item.active .faq-question::after{transform:rotate(45deg);}
+.faq-question:hover{background:var(--bg-panel-2);}
+.faq-answer{
+  max-height:0; overflow:hidden; transition:max-height .3s var(--ease);
+  padding:0 24px; font-size:14px; color:var(--muted);
+}
+.faq-item.active .faq-answer{max-height:300px; padding-bottom:24px;}
+@media (max-width:780px){.faq-grid{grid-template-columns:1fr;}}
+
 /* ---------- BOOKING MODAL ---------- */
 .modal-overlay{
   position:fixed; inset:0; z-index:400; background:rgba(2,5,3,0.72); backdrop-filter:blur(6px);
