@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Autonomy — The Operating System for Autonomous Organizations</title>
+<meta name="description" content="3D Autonomy is a Business AI OS that unifies AI agents, automation, ERP, HRMS, CRM and analytics into one intelligence layer — moving organizations from automation to autonomy.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='transform:rotate(90deg)' viewBox='0 0 26 26'%3E%3Ccircle cx='13' cy='13' r='3.2' fill='%237DFF4E'/%3E%3Ccircle cx='13' cy='3' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Ccircle cx='23' cy='18' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Ccircle cx='3' cy='18' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Cpath d='M13 6V10.5M13 13L20.8 17M13 13L5.2 17' stroke='%237DFF4E' stroke-width='1' opacity='0.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+    <nav>
+      <a href="#home" class="logo">
+        <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="3.2" fill="#7DFF4E"/>
+          <circle cx="13" cy="3" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <circle cx="23" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <circle cx="3" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <path d="M13 6V10.5M13 13L20.8 17M13 13L5.2 17" stroke="#7DFF4E" stroke-width="1" opacity="0.5"/>
+        </svg>
+        3D Autonomy
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+      <!--  <a href="#business-os">Business AI OS</a> -->
+        <a href="#workforce">Digital Workforce</a>
+        <a href="#industries">Industries</a>
+        <a href="#technology">Technology</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-ghost" id="openBookingNav">Book Discovery Session</a>
+        <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-status" id="heroStatus"><span class="pulse"></span> Business AI OS — Live</div>
+  <div class="hero-content">
+    <h1 id="heroH1">Your Business Is Not Software.<span class="accent-line">It Is A Living System.</span></h1>
+    <p class="lead" id="heroLead">Connect people, processes, data and AI into one intelligent operating system that continuously learns, adapts and executes.</p>
+    <div class="hero-ctas" id="heroCtas">
+      <a href="#business-os" class="btn btn-primary">Explore Business AI OS</a>
+      <a href="#future" class="btn btn-ghost">See Autonomous Organizations</a>
+    </div>
+  </div>
+  <div class="hero-scroll-cue" id="heroCue"></div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>AI AGENTS</span><span>AUTOMATION</span><span>ERP</span><span>HRMS</span><span>CRM</span><span>ANALYTICS</span><span>BUSINESS INTELLIGENCE</span><span>HUMAN COLLABORATION</span>
+    <span>AI AGENTS</span><span>AUTOMATION</span><span>ERP</span><span>HRMS</span><span>CRM</span><span>ANALYTICS</span><span>BUSINESS INTELLIGENCE</span><span>HUMAN COLLABORATION</span>
+  </div>
+</div>
+
+<section class="section evo" id="evolution">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="dot"></span>Business maturity</div>
+      <h2>Every organization is somewhere on this line.</h2>
+      <p>Most stall between automation and intelligence. Scroll to see where autonomy actually begins.</p>
+    </div>
+    <div class="evo-rail">
+      <div class="evo-track" id="evoTrack">
+        <div class="evo-line"></div>
+        <div class="evo-line-fill" id="evoFill"></div>
+
+        <div class="evo-stage" data-evo>
+          <div class="evo-dot"></div>
+          <div>
+            <div class="evo-num">STAGE 01</div>
+            <div class="evo-title">Manual Operations</div>
+            <div class="evo-maturity">MATURITY: REACTIVE</div>
+          </div>
+          <div class="evo-detail">
+            <div class="evo-detail-row"><b>Pain point</b>Spreadsheets, tribal knowledge, decisions delayed by data hunting.</div>
+            <div class="evo-detail-row"><b>Limitation</b>Nothing is recorded consistently, so nothing can be trusted.</div>
+            <div class="evo-detail-row"><b>AI present</b>None.</div>
+          </div>
+        </div>
+
+        <div class="evo-stage" data-evo>
+          <div class="evo-dot"></div>
+          <div>
+            <div class="evo-num">STAGE 02</div>
+            <div class="evo-title">Digital Operations</div>
+            <div class="evo-maturity">MATURITY: DIGITIZED, SILOED</div>
+          </div>
+          <div class="evo-detail">
+            <div class="evo-detail-row"><b>Pain point</b>Disconnected tools and duplicate data entry across teams.</div>
+            <div class="evo-detail-row"><b>Limitation</b>Every system has its own truth. None of them agree.</div>
+            <div class="evo-detail-row"><b>AI present</b>Basic reporting, after the fact.</div>
+          </div>
+        </div>
+
+        <div class="evo-stage" data-evo>
+          <div class="evo-dot"></div>
+          <div>
+            <div class="evo-num">STAGE 03</div>
+            <div class="evo-title">Automated Operations</div>
+            <div class="evo-maturity">MATURITY: PROCESS-AUTOMATED</div>
+          </div>
+          <div class="evo-detail">
+            <div class="evo-detail-row"><b>Pain point</b>Rules break the moment reality doesn't match the script.</div>
+            <div class="evo-detail-row"><b>Limitation</b>Automation needs constant human maintenance to stay correct.</div>
+            <div class="evo-detail-row"><b>AI present</b>Rule-based bots, no judgment.</div>
+          </div>
+        </div>
+
+        <div class="evo-stage" data-evo>
+          <div class="evo-dot"></div>
+          <div>
+            <div class="evo-num">STAGE 04</div>
+            <div class="evo-title">AI-Assisted Operations</div>
+            <div class="evo-maturity">MATURITY: INSIGHT-DRIVEN</div>
+          </div>
+          <div class="evo-detail">
+            <div class="evo-detail-row"><b>Pain point</b>AI recommends, but a person still has to act on every signal.</div>
+            <div class="evo-detail-row"><b>Limitation</b>Insight without execution is just another dashboard.</div>
+            <div class="evo-detail-row"><b>AI present</b>Predictive recommendations.</div>
+          </div>
+        </div>
+
+        <div class="evo-stage" data-evo>
+          <div class="evo-dot"></div>
+          <div>
+            <div class="evo-num">STAGE 05</div>
+            <div class="evo-title">Autonomous Organizations</div>
+            <div class="evo-maturity">MATURITY: SELF-OPERATING</div>
+          </div>
+          <div class="evo-detail">
+            <div class="evo-detail-row"><b>Capability</b>AI agents discover, decide and execute inside guardrails you set.</div>
+            <div class="evo-detail-row"><b>Human role</b>Set direction and intervene by exception, not by default.</div>
+            <div class="evo-detail-row"><b>AI present</b>Autonomous agents, continuously learning.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section os-section" id="business-os">
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <div class="kicker" style="justify-content:center;"><span class="dot"></span>Business AI OS</div>
+      <h2>One core. Every function connected.</h2>
+      <p style="margin:0 auto;">Business AI OS sits underneath every department — reading, reasoning and acting across the parts of your business that used to run in isolation.</p>
+    </div>
+    <div class="os-diagram" id="osDiagram">
+      <svg class="os-lines" id="osLines" viewBox="0 0 640 640"></svg>
+      <div class="os-core"><svg class="os-core-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="2.3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg><span>AI CORE</span><small>ACTIVE</small></div>
+    </div>
+    <div class="os-detail" id="osDetail">Hover a function to see how the AI Core supports it in real time.</div>
+  </div>
+</section>
+
+<section class="section workforce" id="workforce">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="dot"></span>Digital workforce</div>
+      <h2>Meet the agents already on shift.</h2>
+      <p>Not chatbots. Not scripts. Specialized AI agents that own a function, report status and keep working after everyone logs off.</p>
+    </div>
+    <div class="agent-grid">
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="3.2"/><path d="M5 20c0-3.5 3.1-6 7-6s7 2.5 7 6"/></svg></div>
+        <div class="agent-top">
+          <div class="agent-id">AGENT · 001</div>
+          <div class="agent-status"><span class="pulse-sm"></span>Active</div>
+        </div>
+        <h3>HR Agent</h3>
+        <p class="agent-role">Workforce operations</p>
+        <ul class="agent-tasks">
+          <li>Attendance</li><li>Payroll</li><li>Leave</li><li>Employee support</li>
+        </ul>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19h16M7 19V11M12 19V6M17 19v-8"/></svg></div>
+        <div class="agent-top">
+          <div class="agent-id">AGENT · 002</div>
+          <div class="agent-status"><span class="pulse-sm"></span>Active</div>
+        </div>
+        <h3>Finance Agent</h3>
+        <p class="agent-role">Financial operations</p>
+        <ul class="agent-tasks">
+          <li>Cash flow</li><li>Expenses</li><li>Forecasting</li>
+        </ul>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></div>
+        <div class="agent-top">
+          <div class="agent-id">AGENT · 003</div>
+          <div class="agent-status"><span class="pulse-sm"></span>Active</div>
+        </div>
+        <h3>Operations Agent</h3>
+        <p class="agent-role">Process orchestration</p>
+        <ul class="agent-tasks">
+          <li>Workflow coordination</li><li>Task monitoring</li>
+        </ul>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="agent-top">
+          <div class="agent-id">AGENT · 004</div>
+          <div class="agent-status"><span class="pulse-sm"></span>Active</div>
+        </div>
+        <h3>Compliance Agent</h3>
+        <p class="agent-role">Risk &amp; regulation</p>
+        <ul class="agent-tasks">
+          <li>Regulatory monitoring</li>
+        </ul>
+      </div>
+      <div class="agent-card">
+        <div class="agent-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <div class="agent-top">
+          <div class="agent-id">AGENT · 005</div>
+          <div class="agent-status"><span class="pulse-sm"></span>Active</div>
+        </div>
+        <h3>Executive Agent</h3>
+        <p class="agent-role">Business intelligence</p>
+        <ul class="agent-tasks">
+          <li>Daily business intelligence</li>
+        </ul>
+      </div>
+      <div class="agent-card agent-card-ghost">
+        <div class="agent-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2.5 2.5"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></div>
+        <div class="agent-top">
+          <div class="agent-id">AGENT · 006</div>
+          <div class="agent-status"><span class="pulse-sm off"></span>Provisioning</div>
+        </div>
+        <h3>Your Agent</h3>
+        <p class="agent-role">Trained on your operations</p>
+        <ul class="agent-tasks">
+          <li>Built for your function</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section loop-section" id="loop">
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <div class="kicker" style="justify-content:center;"><span class="dot"></span>The core philosophy</div>
+      <h2>Discover. Decide. Deliver.</h2>
+      <p style="margin:0 auto;">Every autonomous cycle in the OS runs through the same loop — the business never stops learning about itself.</p>
+    </div>
+    <div class="loop-wrap">
+      <svg class="loop-svg" viewBox="0 0 600 600" id="loopSvg">
+        <circle cx="300" cy="300" r="230" class="loop-track"/>
+        <circle cx="300" cy="300" r="230" class="loop-progress" id="loopProgress"/>
+      </svg>
+      <div class="loop-center">
+        <div class="loop-phase" id="loopPhaseLabel">DISCOVER</div>
+        <div class="loop-sub">3DA-01</div>
+      </div>
+      <div class="loop-node" data-i="0"><span class="ln-dot"></span>Discover</div>
+      <div class="loop-node" data-i="1"><span class="ln-dot"></span>Analyze</div>
+      <div class="loop-node" data-i="2"><span class="ln-dot"></span>Decide</div>
+      <div class="loop-node" data-i="3"><span class="ln-dot"></span>Execute</div>
+      <div class="loop-node" data-i="4"><span class="ln-dot"></span>Learn</div>
+      <div class="loop-node" data-i="5"><span class="ln-dot"></span>Improve</div>
+      <div class="loop-node" data-i="6"><span class="ln-dot"></span>Repeat</div>
+    </div>
+  </div>
+</section>
+
+<section class="section industries" id="industries">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="dot"></span>Industries</div>
+      <h2>A different city block for every industry.</h2>
+      <p>Select a building to see how autonomy changes the way that industry runs day to day.</p>
+    </div>
+    <div class="city">
+      <div class="city-buildings" id="cityBuildings">
+        <button class="building" data-ind="0" style="--h:62%">
+          <svg class="b-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 20V10l4 3V9l4 3V7l4 3V6l4 3v11H3z"/><circle cx="6" cy="16" r="0.6" fill="currentColor" stroke="none"/></svg>
+          <span class="b-label">Manufacturing</span>
+        </button>
+        <button class="building" data-ind="1" style="--h:78%">
+          <svg class="b-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V9l8-5 8 5v12"/><path d="M4 13h16M9 21v-5h6v5"/></svg>
+          <span class="b-label">Construction</span>
+        </button>
+        <button class="building" data-ind="2" style="--h:50%">
+          <svg class="b-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6M4 21h16"/></svg>
+          <span class="b-label">Hospitality</span>
+        </button>
+        <button class="building" data-ind="3" style="--h:90%">
+          <svg class="b-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="b-label">Retail</span>
+        </button>
+        <button class="building" data-ind="4" style="--h:70%">
+          <svg class="b-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v6M9 6h6"/><rect x="4" y="9" width="16" height="12" rx="1"/></svg>
+          <span class="b-label">Healthcare</span>
+        </button>
+        <button class="building" data-ind="5" style="--h:58%">
+          <svg class="b-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 9l10-4 10 4-10 4L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+          <span class="b-label">Education</span>
+        </button>
+      </div>
+      <div class="city-ground"></div>
+    </div>
+    <div class="city-detail" id="cityDetail">
+      <div class="cd-inner">
+        <div class="cd-head">
+          <h3 id="cdTitle">Manufacturing</h3>
+          <div class="cd-tag mono" id="cdTag">SECTOR / 01</div>
+        </div>
+        <div class="cd-grid">
+          <div><div class="cd-label">Pain points</div><p id="cdPain"></p></div>
+          <div><div class="cd-label">AI capabilities</div><p id="cdCap"></p></div>
+          <div><div class="cd-label">Business outcomes</div><p id="cdOut"></p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section technology" id="technology">
+  <img class="section-bg-image" src="https://images.pexels.com/photos/159220/printed-circuit-board-print-plate-via-macro-159220.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" aria-hidden="true" loading="lazy" onerror="this.style.display='none';">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="dot"></span>Architecture</div>
+      <h2>Six layers. One continuous flow of intelligence.</h2>
+      <p>Data moves up through every layer in real time, and decisions move back down — nothing sits in a queue.</p>
+    </div>
+    <div class="stack" id="stack">
+      <div class="stack-layer" data-l="0"><div class="sl-name">People Layer</div><div class="sl-desc">The humans who set direction and handle exceptions.</div></div>
+      <div class="stack-layer" data-l="1"><div class="sl-name">Applications Layer</div><div class="sl-desc">The tools your teams already work in, connected rather than replaced.</div></div>
+      <div class="stack-layer" data-l="2"><div class="sl-name">Data Layer</div><div class="sl-desc">One consistent record of the business, updated continuously.</div></div>
+      <div class="stack-layer" data-l="3"><div class="sl-name">Automation Layer</div><div class="sl-desc">Deterministic workflows that execute the same way every time.</div></div>
+      <div class="stack-layer" data-l="4"><div class="sl-name">AI Agent Layer</div><div class="sl-desc">Specialized agents that reason, decide and act inside guardrails.</div></div>
+      <div class="stack-layer stack-core" data-l="5"><div class="sl-name">Business AI OS Core</div><div class="sl-desc">The intelligence layer everything above runs on.</div></div>
+      <div class="stack-pulse" id="stackPulse"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section command" id="command-center">
+  <img class="section-bg-image" src="https://images.pexels.com/photos/17323801/pexels-photo-17323801/free-photo-of-network-rack.jpeg?auto=compress&w=1600" alt="" aria-hidden="true" loading="lazy" onerror="this.style.display='none';">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="dot"></span>Command center</div>
+      <h2>Your business, instrumented.</h2>
+      <p>A live read of the metrics that matter, the way a mission control operator would see them.</p>
+    </div>
+    <div class="cc-grid" id="ccGrid">
+      <div class="cc-card">
+        <div class="cc-label">Revenue</div>
+        <div class="cc-value mono" data-target="4.82" data-prefix="$" data-suffix="M">$0.00M</div>
+        <div class="cc-bar"><span style="width:74%"></span></div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-label">Productivity</div>
+        <div class="cc-value mono" data-target="118" data-suffix="%">0%</div>
+        <div class="cc-bar"><span style="width:82%"></span></div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-label">Employee Experience</div>
+        <div class="cc-value mono" data-target="8.6" data-suffix="/10">0/10</div>
+        <div class="cc-bar"><span style="width:86%"></span></div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-label">Automation Rate</div>
+        <div class="cc-value mono" data-target="67" data-suffix="%">0%</div>
+        <div class="cc-bar"><span style="width:67%"></span></div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-label">Compliance Health</div>
+        <div class="cc-value mono" data-target="99.2" data-suffix="%">0%</div>
+        <div class="cc-bar"><span style="width:99%"></span></div>
+      </div>
+      <div class="cc-card">
+        <div class="cc-label">AI Activity</div>
+        <div class="cc-value mono" data-target="1204" data-suffix="/hr">0/hr</div>
+        <div class="cc-bar"><span style="width:91%"></span></div>
+      </div>
+    </div>
+    <div class="cc-feed mono" id="ccFeed"></div>
+  </div>
+</section>
+
+<section class="section future" id="future">
+  <div class="wrap">
+    <div class="future-track">
+      <div class="future-row" data-f>
+        <div class="future-when mono">TODAY</div>
+        <div class="future-what">Businesses use software.</div>
+      </div>
+      <div class="future-row" data-f>
+        <div class="future-when mono">TOMORROW</div>
+        <div class="future-what">Businesses collaborate with AI.</div>
+      </div>
+      <div class="future-row" data-f>
+        <div class="future-when mono">FUTURE</div>
+        <div class="future-what">Businesses become autonomous.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resources" style="padding-bottom:60px;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker"><span class="dot"></span>Resources</div>
+      <h2>Go deeper before you talk to us.</h2>
+      <p>Everything you need to bring the idea of an autonomous organization back to your team.</p>
+    </div>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h9l4 4v14H6V3z"/><path d="M14 3v5h5M9 12h6M9 16h6"/></svg></div>
+        <div class="resource-tag">GUIDE</div>
+        <h4>What Is a Business AI OS?</h4>
+        <p>The category explained, and how it differs from ERP, RPA and point AI tools.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="4"/><rect x="4" y="10" width="16" height="4"/><rect x="4" y="16" width="16" height="4"/></svg></div>
+        <div class="resource-tag">FRAMEWORK</div>
+        <h4>The Autonomy Maturity Model</h4>
+        <p>Find where your organization sits between manual operations and full autonomy.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div class="resource-tag">CASE STUDY</div>
+        <h4>Inside a Digital Workforce</h4>
+        <p>How five AI agents took over the operational load of a 40-person team.</p>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.5 8.5 0 0 1-3.8-1L3 20l1.1-5.5A8.4 8.4 0 1 1 21 11.5z"/></svg></div>
+        <div class="resource-tag">BRIEFING</div>
+        <h4>Preparing for a Discovery Session</h4>
+        <p>What to bring, who to include, and what to expect from the first conversation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap contact-wrap">
+    <h2>Ready to build an autonomous organization?</h2>
+    <p>Transform your business from automation to autonomy.</p>
+        <div style="margin-bottom: 34px; font-family: var(--font-mono); color: var(--accent);">
+          Email us: <a href="mailto:3dautonomy@gmail.com" style="text-decoration: underline;">3dautonomy@gmail.com</a>
+        </div>
+        <button type="button" class="btn btn-primary" id="openBookingContact">Book a Discovery Session</button>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap footer-grid">
+    <div>
+      <a href="#home" class="logo footer-logo">
+        <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="3.2" fill="#7DFF4E"/>
+          <circle cx="13" cy="3" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <circle cx="23" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <circle cx="3" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+        </svg>
+        3D Autonomy
+      </a>
+      <p class="footer-tag"><strong>Automate Business</strong> — All-in-One MSME Automation Platform. A connected platform for MSMEs to manage tasks, lead follow-up, attendance, forms, and WhatsApp workflows from one workspace.</p>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <div class="footer-h">Product</div>
+        <a href="#business-os">Business AI OS</a>
+        <a href="#workforce">Digital Workforce</a>
+        <a href="#technology">Technology</a>
+      </div>
+      <div>
+        <div class="footer-h">Company</div>
+        <a href="#industries">Industries</a>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+      </div>
+      <div>
+        <div class="footer-h">Get started</div>
+        <a href="#contact" id="openBookingFooter">Book Discovery Session</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom mono">© 2026 3D Autonomy — From Automation to Autonomy.</div>
+</footer>
+</main>
+
+<div class="copilot" id="copilot">
+  <div class="copilot-panel" id="copilotPanel">
+    <div class="cp-head">
+      <div>
+        <div class="cp-title">Ask Your Future Business</div>
+        <div class="cp-sub mono">Strategist mode</div>
+      </div>
+      <button class="cp-close" id="cpClose">&times;</button>
+    </div>
+    <div class="cp-body" id="cpBody">
+      <div class="cp-msg cp-msg-bot">I think in systems, not tickets. Ask me where autonomy could take your business.</div>
+    </div>
+    <div class="cp-prompts" id="cpPrompts">
+      <button data-q="How can I reduce manual work?">How can I reduce manual work?</button>
+      <button data-q="What is Business AI OS?">What is Business AI OS?</button>
+      <button data-q="How can AI improve operations?">How can AI improve operations?</button>
+      <button data-q="What does an autonomous organization look like?">What does an autonomous organization look like?</button>
+    </div>
+    <form class="cp-input-row" id="cpForm">
+      <input type="text" id="cpInput" placeholder="Ask about your business..." autocomplete="off">
+      <button type="submit" aria-label="Send">→</button>
+    </form>
+  </div>
+  <button class="copilot-fab" id="copilotFab">
+    <span class="fab-dot"></span>
+    <span class="fab-label">Ask Your Future Business</span>
+  </button>
+</div>
+
+<div class="modal-overlay" id="bookingOverlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Book a Discovery Session</h3>
+      <button class="modal-close" id="bookingClose">&times;</button>
+    </div>
+    <p class="modal-sub">30 minutes to map your operations against Business AI OS. No deck, no pitch — just your business.</p>
+
+    <form id="bookingForm">
+      <div class="form-two">
+        <div class="form-row">
+          <label>Full name</label>
+          <input type="text" id="bkName" required>
+        </div>
+        <div class="form-row">
+          <label>Work email</label>
+          <input type="email" id="bkEmail" required>
+        </div>
+      </div>
+      <div class="form-two">
+        <div class="form-row">
+          <label>Company</label>
+          <input type="text" id="bkCompany" required>
+        </div>
+        <div class="form-row">
+          <label>Team size</label>
+          <select id="bkSize">
+            <option>1–20</option>
+            <option>21–100</option>
+            <option>101–500</option>
+            <option>500+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label>What would you want AI to take off your plate first?</label>
+        <textarea id="bkMessage" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary modal-submit">Confirm Discovery Session</button>
+      <div class="modal-note">Your details are saved in this browser so we can follow up.</div>
+    </form>
+
+    <div class="modal-success" id="bookingSuccess">
+      <div class="ms-icon">✓</div>
+      <h4>Session request received.</h4>
+      <p id="bookingSuccessText">We'll reach out shortly to confirm a time.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
