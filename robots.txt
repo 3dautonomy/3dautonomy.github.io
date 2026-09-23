@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://3dautonomy.com/sitemap.xml
+Sitemap: https://3dautonomy.github.io/sitemap.xml
