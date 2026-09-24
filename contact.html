@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | 3D Autonomy - Book a Discovery Session</title>
+  <meta name="description" content="Ready to transform your business from automation to autonomy? Book a discovery session with 3D Autonomy to map your operations against our Business AI OS.">
+  <link rel="canonical" href="https://3dautonomy.github.io/contact.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='transform:rotate(90deg)' viewBox='0 0 26 26'%3E%3Ccircle cx='13' cy='13' r='3.2' fill='%237DFF4E'/%3E%3Ccircle cx='13' cy='3' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Ccircle cx='23' cy='18' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Ccircle cx='3' cy='18' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Cpath d='M13 6V10.5M13 13L20.8 17M13 13L5.2 17' stroke='%237DFF4E' stroke-width='1' opacity='0.5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-transition">
+
+<header id="site-header">
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo">
+        <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="3.2" fill="#7DFF4E"/>
+          <circle cx="13" cy="3" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <circle cx="23" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <circle cx="3" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <path d="M13 6V10.5M13 13L20.8 17M13 13L5.2 17" stroke="#7DFF4E" stroke-width="1" opacity="0.5"/>
+        </svg>
+        3D Autonomy
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="industries.html">Industries</a>
+        <a href="technology.html">Technology</a>
+        <a href="resources.html">Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" style="color:var(--accent)">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost" id="openBookingNav">Book Discovery Session</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section" style="padding-top:180px; text-align:center;">
+    <div class="wrap">
+      <div class="section-head fade-in" style="margin:0 auto 60px; text-align:center;">
+        <div class="kicker" style="justify-content:center;"><span class="dot"></span>Discovery Session</div>
+        <h2>Map Your Path to Autonomy.</h2>
+        <p>30 minutes to analyze your current operations and see where a Business AI OS can eliminate your bottlenecks.</p>
+      </div>
+
+      <div class="modal-box slide-up" style="max-width:560px; margin:0 auto; opacity:1; pointer-events:auto; transform:none; background:var(--bg-panel); border:1px solid var(--line); padding:40px; border-radius:8px; text-align:left;">
+        <form id="bookingForm">
+          <div class="form-two">
+            <div class="form-row">
+              <label for="bkName">Full name</label>
+              <input type="text" id="bkName" name="full_name" required>
+            </div>
+            <div class="form-row">
+              <label for="bkEmail">Work email</label>
+              <input type="email" id="bkEmail" name="email" required>
+            </div>
+          </div>
+          <div class="form-two">
+            <div class="form-row">
+              <label for="bkCompany">Company</label>
+              <input type="text" id="bkCompany" name="company" required>
+            </div>
+            <div class="form-row">
+              <label for="bkSize">Team size</label>
+              <select id="bkSize" name="team_size">
+                <option>1–20</option>
+                <option>21–100</option>
+                <option>101–500</option>
+                <option>500+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="bkMessage">What would you want AI to take off your plate first?</label>
+            <textarea id="bkMessage" name="message" rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary modal-submit" style="width:100%; margin-top:10px;">Confirm Discovery Session</button>
+        </form>
+
+        <div class="modal-success" id="bookingSuccess">
+          <div class="ms-icon">✓</div>
+          <h4>Session request received.</h4>
+          <p id="bookingSuccessText">We'll reach out shortly to confirm a time.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:40px; font-family:var(--font-mono); font-size:13px; color:var(--muted-2);">
+        Prefer direct email? <a href="mailto:3dautonomy@gmail.com" style="color:var(--accent); text-decoration:underline;">3dautonomy@gmail.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="about">
+  <div class="wrap footer-grid">
+    <div style="width:100%; margin-bottom:40px;">
+      <a href="index.html" class="logo footer-logo">
+        <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="3.2" fill="#7DFF4E"/>
+          <circle cx="13" cy="3" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <circle cx="23" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <circle cx="3" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+        </svg>
+        3D Autonomy
+      </a>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <div class="footer-h">Product</div>
+        <a href="index.html">Home</a>
+        <a href="industries.html">Industries</a>
+        <a href="technology.html">Technology</a>
+      </div>
+      <div>
+        <div class="footer-h">Company</div>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+      </div>
+      <div>
+        <div class="footer-h">Get started</div>
+        <a href="contact.html">Book Discovery Session</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom mono">© 2026 3D Autonomy — From Automation to Autonomy.</div>
+</footer>
+
+<div class="copilot" id="copilot">
+  <div class="copilot-panel" id="copilotPanel">
+    <div class="cp-head">
+      <div>
+        <div class="cp-title">Ask Your Future Business</div>
+        <div class="cp-sub mono">Strategist mode</div>
+      </div>
+      <button class="cp-close" id="cpClose">&times;</button>
+    </div>
+    <div class="cp-body" id="cpBody">
+      <div class="cp-msg cp-msg-bot">I think in systems, not tickets. Ask me where autonomy could take your business.</div>
+    </div>
+    <div class="cp-prompts" id="cpPrompts">
+      <button data-q="How can I reduce manual work?">How can I reduce manual work?</button>
+      <button data-q="What is Business AI OS?">What is Business AI OS?</button>
+      <button data-q="How can AI improve operations?">How can AI improve operations?</button>
+      <button data-q="What does an autonomous organization look like?">What does an autonomous organization look like?</button>
+    </div>
+    <form class="cp-input-row" id="cpForm">
+      <input type="text" id="cpInput" placeholder="Ask about your business..." autocomplete="off">
+      <button type="submit" aria-label="Send">→</button>
+    </form>
+  </div>
+  <button class="copilot-fab" id="copilotFab">
+    <span class="fab-dot"></span>
+    <span class="fab-label">Ask Your Future Business</span>
+  </button>
+</div>
+
+<script src="script.js"></script>
+<div id="page-transition"></div><div id="back-to-top" title="Back to top">↑</div></body>
+</html>

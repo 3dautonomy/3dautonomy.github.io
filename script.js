@@ -3,17 +3,52 @@ const header = document.getElementById('site-header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 20);
 }, {passive:true});
+
+// Page Transitions
+const pageTransition = document.getElementById('page-transition');
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+    e.preventDefault();
+    pageTransition.classList.add('active');
+    setTimeout(() => {
+      window.location.href = href;
+    }, 400);
+  });
+});
+window.addEventListener('DOMContentLoaded', () => {
+  if (pageTransition) {
+    pageTransition.classList.remove('active');
+  }
+});
+
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
+
+// Back to top
+const btt = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  if(btt) btt.classList.toggle('visible', window.scrollY > 600);
+}, {passive:true});
+if(btt) btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
 /* ---------- HERO SEQUENCE + CANVAS NETWORK ---------- */
 const canvas = document.getElementById('hero-canvas');
 const ctx = canvas.getContext('2d');
 let W,H,DPR;
+let mouse = {x: -1000, y: -1000};
+
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
 function resize(){
   DPR = Math.min(window.devicePixelRatio||1, 2);
   W = canvas.offsetWidth; H = canvas.offsetHeight;
@@ -66,9 +101,17 @@ function draw(){
   ctx.clearRect(0,0,W,H);
   const core = nodes[0];
   const ring = nodes.filter(n=>n.label);
+  
+  const dx = mouse.x - core.x;
+  const dy = mouse.y - core.y;
+  const dist = Math.sqrt(dx*dx + dy*dy);
+  const influence = Math.max(0, 1 - dist/400);
+  const coreX = core.x + dx * influence * 0.1;
+  const coreY = core.y + dy * influence * 0.1;
+
   ring.forEach(n=>{
-    n.x = n.cx + Math.cos(n.baseAngle+Math.sin(t+n.phase)*0.04)*(n.dist+Math.sin(t*0.7+n.phase)*6);
-    n.y = n.cy + Math.sin(n.baseAngle+Math.sin(t+n.phase)*0.04)*(n.dist+Math.sin(t*0.7+n.phase)*6);
+    n.x = coreX + Math.cos(n.baseAngle+Math.sin(t+n.phase)*0.04)*(n.dist+Math.sin(t*0.7+n.phase)*6);
+    n.y = coreY + Math.sin(n.baseAngle+Math.sin(t+n.phase)*0.04)*(n.dist+Math.sin(t*0.7+n.phase)*6);
     if(n._el){
       n._el.style.left = n.x+'px';
       n._el.style.top = n.y+'px';
@@ -76,11 +119,11 @@ function draw(){
   });
   ctx.lineWidth = 1;
   ring.forEach((n)=>{
-    const grad = ctx.createLinearGradient(core.x,core.y,n.x,n.y);
+    const grad = ctx.createLinearGradient(coreX,coreY,n.x,n.y);
     grad.addColorStop(0,'rgba(125,255,78,0.35)');
     grad.addColorStop(1,'rgba(125,255,78,0.04)');
     ctx.strokeStyle = grad;
-    ctx.beginPath(); ctx.moveTo(core.x,core.y); ctx.lineTo(n.x,n.y); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(coreX,coreY); ctx.lineTo(n.x,n.y); ctx.stroke();
   });
   ctx.strokeStyle = 'rgba(184,192,194,0.08)';
   for(let i=0;i<ring.length;i++){
@@ -88,13 +131,13 @@ function draw(){
     ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
   }
   const pulse = 1+Math.sin(t*2)*0.15;
-  const g = ctx.createRadialGradient(core.x,core.y,0,core.x,core.y,26*pulse);
+  const g = ctx.createRadialGradient(coreX,coreY,0,coreX,coreY,26*pulse);
   g.addColorStop(0,'rgba(125,255,78,0.9)');
   g.addColorStop(1,'rgba(125,255,78,0)');
   ctx.fillStyle = g;
-  ctx.beginPath(); ctx.arc(core.x,core.y,26*pulse,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(coreX,coreY,26*pulse,0,Math.PI*2); ctx.fill();
   ctx.fillStyle = '#7DFF4E';
-  ctx.beginPath(); ctx.arc(core.x,core.y,4,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(coreX,coreY,4,0,Math.PI*2); ctx.fill();
   ring.forEach(n=>{
     ctx.fillStyle = 'rgba(125,255,78,0.9)';
     ctx.beginPath(); ctx.arc(n.x,n.y,3,0,Math.PI*2); ctx.fill();
@@ -113,6 +156,18 @@ function draw(){
 function initHero(){ resize(); buildNodes(); draw(); }
 window.addEventListener('resize', ()=>{ resize(); buildNodes(); });
 initHero();
+
+// Reveal Observer
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach((entry, i)=>{
+    if(entry.isIntersecting){
+      setTimeout(()=>{
+        entry.target.classList.add('reveal-active');
+      }, i * 100);
+    }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 window.addEventListener('load', ()=>{
   const seq = [
@@ -320,9 +375,11 @@ const ccFeed = document.getElementById('ccFeed');
 let feedI = 0;
 function rotateFeed(){
   ccFeed.querySelectorAll('.cf-line').forEach(l=>l.classList.remove('on'));
+  const now = new Date();
+  const time = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0') + ':' + now.getSeconds().toString().padStart(2,'0');
   const line = document.createElement('div');
   line.className='cf-line';
-  line.textContent = '› '+FEED_LINES[feedI % FEED_LINES.length];
+  line.innerHTML = `<span style="opacity:0.5; margin-right:8px;">[${time}]</span> › ${FEED_LINES[feedI % FEED_LINES.length]}`;
   ccFeed.appendChild(line);
   requestAnimationFrame(()=>line.classList.add('on'));
   while(ccFeed.children.length>2) ccFeed.removeChild(ccFeed.firstChild);
@@ -355,8 +412,24 @@ function respondTo(q){
 function addMsg(text, who){
   const el = document.createElement('div');
   el.className = 'cp-msg '+(who==='user'?'cp-msg-user':'cp-msg-bot');
-  el.textContent = text;
   cpBody.appendChild(el);
+  
+  if(who === 'bot'){
+    let i = 0;
+    el.textContent = '';
+    const timer = setInterval(() => {
+      if(i < text.length){
+        el.textContent += text.charAt(i);
+        i++;
+        cpBody.scrollTop = cpBody.scrollHeight;
+      } else {
+        clearInterval(timer);
+      }
+    }, 20);
+  } else {
+    el.textContent = text;
+  }
+  
   cpBody.scrollTop = cpBody.scrollHeight;
 }
 document.getElementById('cpPrompts').addEventListener('click', (e)=>{
@@ -376,6 +449,7 @@ cpForm.addEventListener('submit', (e)=>{
 });
 
 /* ---------- BOOKING MODAL ---------- */
+const FORMS_ENDPOINT = 'https://formspree.io/f/xbglyegz';
 const bookingOverlay = document.getElementById('bookingOverlay');
 const bookingForm = document.getElementById('bookingForm');
 const bookingSuccess = document.getElementById('bookingSuccess');
@@ -401,38 +475,43 @@ bookingClose.addEventListener('click', closeBooking);
 bookingOverlay.addEventListener('click', (e)=>{ if(e.target===bookingOverlay) closeBooking(); });
 document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeBooking(); });
 
-// in-memory fallback store, used if localStorage is unavailable
-let bookingMemoryStore = [];
-function saveBooking(entry){
-  try{
-    const existing = JSON.parse(localStorage.getItem('da_bookings') || '[]');
-    existing.push(entry);
-    localStorage.setItem('da_bookings', JSON.stringify(existing));
-    return true;
-  }catch(err){
-    bookingMemoryStore.push(entry);
-    return false;
-  }
-}
-
-bookingForm.addEventListener('submit', (e)=>{
+bookingForm.addEventListener('submit', async (e)=>{
   e.preventDefault();
-  const entry = {
-    name: document.getElementById('bkName').value.trim(),
-    email: document.getElementById('bkEmail').value.trim(),
-    company: document.getElementById('bkCompany').value.trim(),
-    teamSize: document.getElementById('bkSize').value,
-    message: document.getElementById('bkMessage').value.trim(),
-    submittedAt: new Date().toISOString(),
-  };
-  const persisted = saveBooking(entry);
-  bookingForm.style.display = 'none';
-  bookingSuccessText.textContent = `We'll reach out to ${entry.email} shortly to confirm a time.`;
-  bookingSuccess.classList.add('show');
-  bookingForm.reset();
-  if(!persisted){
-    // storage was blocked in this environment — request is still captured for this session
-    console.warn('Booking stored in memory only (localStorage unavailable):', entry);
+  
+  const submitBtn = bookingForm.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.textContent;
+  
+  // Start Loading State
+  submitBtn.classList.add('loading');
+  submitBtn.disabled = true;
+  
+  const formData = new FormData(bookingForm);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const response = await fetch(FORMS_ENDPOINT, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json' 
+      }
+    });
+
+    if (!response.ok) throw new Error('Submission failed');
+    
+    // Success State
+    bookingForm.style.display = 'none';
+    bookingSuccessText.textContent = `We'll reach out to ${data.email} shortly to confirm a time.`;
+    bookingSuccess.classList.add('show');
+    bookingForm.reset();
+  } catch (err) {
+    console.error('Formspree Error:', err);
+    alert('Our neural core is experiencing a temporary glitch. Please try again or email us directly at 3dautonomy@gmail.com');
+  } finally {
+    submitBtn.classList.remove('loading');
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalBtnText;
   }
 });
 
