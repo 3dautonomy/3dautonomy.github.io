@@ -6,7 +6,8 @@
   <title>About | 3D Autonomy - Our Philosophy</title>
   <meta name="description" content="Learn about 3D Autonomy's mission to transform the MSME landscape from manual operations to autonomous organizations.">
   <link rel="canonical" href="https://3dautonomy.github.io/about.html">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='transform:rotate(90deg)' viewBox='0 0 26 26'%3E%3Ccircle cx='13' cy='13' r='3.2' fill='%237DFF4E'/%3E%3Ccircle cx='13' cy='3' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Ccircle cx='23' cy='18' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Ccircle cx='3' cy='18' r='1.6' fill='%237DFF4E' opacity='0.7'/%3E%3Cpath d='M13 6V10.5M13 13L20.8 17M13 13L5.2 17' stroke='%237DFF4E' stroke-width='1' opacity='0.5'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNiIgZmlsbD0ibm9uZSI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoOTAgMTMgMTMpIj48Y2lyY2xlIGN4PSIxMyIgY3k9IjEzIiByPSIzLjIiIGZpbGw9IiM3REZGNEUiLz48Y2lyY2xlIGN4PSIxMyIgY3k9IjMiIHI9IjEuNiIgZmlsbD0iIzdERkY0RSIgb3BhY2l0eT0iMC43Ii8+PGNpcmNsZSBjeD0iMjMiIGN5PSIxOCIgcj0iMS42IiBmaWxsPSIjN0RGRjRFIiBvcGFjaXR5PSIwLjciLz48Y2lyY2xlIGN4PSIzIiBjeT0iMTgiIHI9IjEuNiIgZmlsbD0iIzdERkY0RSIgb3BhY2l0eT0iMC43Ii8+PHBhdGggZD0iTTEzIDZWMTAuNU0xMyAxM0wyMC44IDE3TTEzIDEzTDUuMiAxNyIgc3Ryb2tlPSIjN0RGRjRFIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNSIvPjwvZz48L3N2Zz4K">
+<link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -44,9 +45,19 @@
 </header>
 
 <main>
-  <section class="section" style="padding-top:180px;">
+  <section class="section" style="padding-top:180px; position:relative; overflow:hidden;">
+    <div class="section-bg-image" style="position:absolute; top:0; left:0; width:100%; height:100%; background: radial-gradient(circle at 50% 50%, #1a2e1a 0%, #0a0a0a 100%); z-index:1;">
+      <svg width="100%" height="100%" style="opacity:0.3">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#7DFF4E" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
     <div class="wrap">
-      <div class="section-head fade-in">
+      <div class="section-head fade-in" style="position:relative; z-index:2;">
         <div class="kicker"><span class="dot"></span>Our Vision</div>
         <h2>Beyond Software. Towards Autonomy.</h2>
         <p>We believe the next decade of business isn't about better tools, but about better systems that can reason and execute on their own.</p>
@@ -62,11 +73,18 @@
           <p class="rich-text" style="margin:20px 0;">For 30 years, we've been told that more software equals more efficiency. But the opposite happened. We ended up with a fragmented mess of SaaS tools, where humans became the "glue" between them—copying data from a CRM to a Spreadsheet to an ERP.</p>
           <p class="rich-text">This is "Software Dependency," and it's the biggest bottleneck in the modern MSME.</p>
         </div>
-        <div class="slide-up" style="animation-delay:0.2s; background:var(--bg); border:1px solid var(--line); aspect-ratio:4/3; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-           <div style="text-align:center; color:var(--muted-2);">
-             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:var(--accent); margin-bottom:10px;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-             <div class="mono" style="font-size:12px;">SYSTEMIC SHIFT</div>
-           </div>
+        <div class="slide-up" style="animation-delay:0.2s; background:var(--bg); border:1px solid var(--line); aspect-ratio:4/3; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center; padding:20px;">
+           <svg viewBox="0 0 200 150" width="100%" height="100%" style="max-width:300px; color:var(--accent)">
+             <rect width="200" height="150" fill="none" />
+             <path d="M40,110 L70,50 L100,80 L130,20 L160,70" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+             <circle cx="40" cy="110" r="4" fill="currentColor" />
+             <circle cx="70" cy="50" r="4" fill="currentColor" />
+             <circle cx="100" cy="80" r="4" fill="currentColor" />
+             <circle cx="130" cy="20" r="4" fill="currentColor" />
+             <circle cx="160" cy="70" r="4" fill="currentColor" />
+             <path d="M50,80 Q70,100 90,80" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5" />
+             <path d="M110,50 Q130,70 150,50" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5" />
+           </svg>
         </div>
       </div>
     </div>
@@ -75,11 +93,15 @@
   <section class="section">
     <div class="wrap">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;">
-        <div class="slide-up" style="animation-delay:0.2s; order:2; background:var(--bg); border:1px solid var(--line); aspect-ratio:4/3; border-radius:8px; display:flex; align-items:center; justify-content:center;">
-           <div style="text-align:center; color:var(--muted-2);">
-             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:var(--accent); margin-bottom:10px;"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-             <div class="mono" style="font-size:12px;">AUTONOMOUS GOAL</div>
-           </div>
+        <div class="slide-up" style="animation-delay:0.2s; order:2; background:var(--bg); border:1px solid var(--line); aspect-ratio:4/3; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center; padding:20px;">
+           <svg viewBox="0 0 200 150" width="100%" height="100%" style="max-width:300px; color:var(--accent)">
+             <rect width="200" height="150" fill="none" />
+             <circle cx="100" cy="75" r="30" stroke="currentColor" stroke-width="4" fill="none" />
+             <circle cx="100" cy="75" r="15" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6" />
+             <path d="M100,45 L100,30 M130,75 L145,75 M100,105 L100,120 M70,75 L55,75" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+             <path d="M85,60 L115,90 M115,60 L85,90" stroke="currentColor" stroke-width="2" opacity="0.4" />
+             <circle cx="100" cy="75" r="5" fill="currentColor" />
+           </svg>
         </div>
         <div class="slide-up" style="animation-delay:0.1s; order:1;">
           <h3 class="accent-text">Our Solution: The AI OS</h3>
@@ -100,6 +122,7 @@
           <circle cx="13" cy="3" r="1.6" fill="#7DFF4E" opacity="0.7"/>
           <circle cx="23" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
           <circle cx="3" cy="18" r="1.6" fill="#7DFF4E" opacity="0.7"/>
+          <path d="M13 6V10.5M13 13L20.8 17M13 13L5.2 17" stroke="#7DFF4E" stroke-width="1" opacity="0.5"/>
         </svg>
         3D Autonomy
       </a>
@@ -155,6 +178,6 @@
   </button>
 </div>
 
-<script src="script.js"></script>
-<div id="page-transition"></div><div id="back-to-top" title="Back to top">↑</div></body>
+<div id="page-transition"></div><div id="back-to-top" title="Back to top">↑</div>
+<script src="script.js"></script></body>
 </html>
